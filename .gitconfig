@@ -1,0 +1,27 @@
+[diff]
+	tool = vimdiff
+	algorithm = patience
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff
+[core]
+	editor = vim
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[alias]
+	co = checkout
+	ci = commit
+	br = branch
+	st = status
+    dt = difftool
+	unstage = reset HEAD --
+	last = log --pretty=oneline -3 HEAD
+    cram = commit -a --amend --no-edit
+    logo = log --pretty=oneline
+#[url "git@github.com:"]
+#    insteadOf = "https://github.com/"
+[user]
+	name = Dong Zhou
+	email = dong.zhou@schrodinger.com
+[pull]
+	rebase = true
