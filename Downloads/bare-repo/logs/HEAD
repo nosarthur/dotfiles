@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 285d8cad6fc77b0ac5f010ae028e04489ba55755 Dong Zhou <dong.zhou@schrodinger.com> 1622470761 -0400	commit (initial): add files
+285d8cad6fc77b0ac5f010ae028e04489ba55755 0000000000000000000000000000000000000000 Dong Zhou <dong.zhou@schrodinger.com> 1622470842 -0400	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 285d8cad6fc77b0ac5f010ae028e04489ba55755 Dong Zhou <dong.zhou@schrodinger.com> 1622470842 -0400	Branch: renamed refs/heads/master to refs/heads/main
+285d8cad6fc77b0ac5f010ae028e04489ba55755 1b2face85fe3665202c8b278292fb2b9447a13da Dong Zhou <dong.zhou@schrodinger.com> 1622470989 -0400	pull (start): checkout 1b2face85fe3665202c8b278292fb2b9447a13da
+1b2face85fe3665202c8b278292fb2b9447a13da 5c9b5485b41760ea2d4eff57754692aa119b17f0 Dong Zhou <dong.zhou@schrodinger.com> 1622470989 -0400	pull (pick): add files
+5c9b5485b41760ea2d4eff57754692aa119b17f0 5c9b5485b41760ea2d4eff57754692aa119b17f0 Dong Zhou <dong.zhou@schrodinger.com> 1622470989 -0400	pull (finish): returning to refs/heads/main
+5c9b5485b41760ea2d4eff57754692aa119b17f0 0189112a7ffe79b1243c0532bf102ebb3268e8ab Dong Zhou <dong.zhou@schrodinger.com> 1622477715 -0400	commit: add .vim

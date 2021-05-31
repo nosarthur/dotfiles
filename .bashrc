@@ -92,7 +92,7 @@ fd() {
   cd "$dir"
 }
 
-source ~/.vim/bash/z.sh
+source ~/.vim/z.sh
 unalias z 2> /dev/null
 z() {
   [ $# -gt 0 ] && _z "$*" && return
