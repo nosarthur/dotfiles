@@ -1,7 +1,12 @@
 set -o vi
-bind -m vi-insert 'Control-l: clear-screen'
 
 export EDITOR=/usr/bin/vim
+
+export HISTIGNORE='pwd:exit:fg:bg:top:clear:history:ls:ll:uptime:df'
+export HISTCONTROL=ignoredups
+
+shopt -s histappend
+export HISTSIZE=10000
 
 shopt -s autocd
 shopt -s direxpand

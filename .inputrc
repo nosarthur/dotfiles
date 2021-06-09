@@ -1,2 +1,6 @@
 set show-all-if-ambiguous on
 set completion-ignore-case on
+
+# enable partial history search
+"\e[A": history-search-backward
+"\e[B": history-search-forward
