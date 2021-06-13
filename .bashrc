@@ -1,4 +1,5 @@
 set -o vi
+bind -f ~/.inputrc
 
 export EDITOR=/usr/bin/vim
 
