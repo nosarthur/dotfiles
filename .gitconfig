@@ -13,6 +13,7 @@
 	ci = commit
 	br = branch
 	st = status
+    stat = diff --stat
     dt = difftool
 	unstage = reset HEAD --
 	last = log --pretty=oneline -3 HEAD
@@ -26,3 +27,9 @@
     email = zhou.dong@gmail.com
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main
+[branch]
+	autosetupmerge = always
+[push]
+	default = simple

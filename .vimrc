@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'dyng/ctrlsf.vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -14,6 +15,7 @@ Plug 'majutsushi/tagbar'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 let g:seoul256_background = 235
@@ -136,15 +138,14 @@ endfunction
 highlight Pmenu ctermbg=black ctermfg=yellow
 
 
-nmap <Leader>t :TagbarToggle<CR>
 nmap <leader>a :CtrlSF -R ""<Left>
-nmap <leader>f :GFiles!<CR>
-nmap <leader>o :Files!<CR>
-nmap <leader>w :BLines<CR>
-nmap <leader>l :Lines!<CR>
-nmap <leader>b :Buffer<CR>
-nmap <leader>r :Rg!<CR>
+nmap <leader>b :BLines<CR>
 nmap <leader>d :GitGutterFold<CR>
+nmap <leader>f :GFiles!<CR>
+"nmap <leader>l :Lines!<CR>
+nmap <leader>o :Files!<CR>
+nmap <leader>r :Rg!<CR>
+nmap <leader>t :TagbarToggle<CR>
 
 " Go to tab by number
 noremap <leader>1 1gt
@@ -193,6 +194,22 @@ let g:tagbar_type_go = {
 let g:AutoPairsShortcutFastWrap='<C-w>'
 
 let g:indent_guides_enable_on_vim_startup = 1
+
+" Vim Wiki
+let g:vimwiki_list = [{
+    \ 'path': '~/Documents/vimwiki/text',
+    \ 'template_default': 'default',
+    \ 'template_ext': '.html',
+    \ 'template_path': '~/Documents/vimwiki/templates/',
+    \ 'path_html': '~/Documents/vimwiki/_site',
+    \ }]
+"   \ 'path': '~/vimwiki/content', 'syntax': 'markdown',  'ext': '.md',
+"	\ 'custom_wiki2html': 'vimwiki_markdown',
+"    "\ 'custom_wiki2html': '$HOME/.vim/wiki2html.sh'
+let g:vimwiki_table_mappings = 0
+let g:vimwiki_global_ext = 0
+"let g:vimwiki_markdown_link_ext = 1
+nmap <leader>wa :VimwikiAll2HTML<CR>
 
 augroup BgHighlight
     autocmd!

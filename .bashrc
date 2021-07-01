@@ -20,23 +20,26 @@ alias ff='find . -name'
 alias g='git'
 alias ll="ls -lhtr"
 alias ls="ls -hG"
-alias n='notes'
-alias pbc='pbcopy'
+alias pp='pwd | tr -d "\n" | pbcopy'
 alias r='greadlink -f'
+alias rp='_rp(){ greadlink -f "$1"| tr -d "\n" | pbcopy;}; _rp'
 alias s='ssh'
+alias sb='. ~/.bashrc'
 alias t='taskell'
 alias tf='tail -f'
 alias v="vim"
 alias vb='v ~/.bashrc'
 alias vg='v ~/.gitconfig'
-alias vn='v ~/notes/$(notes ls | fzf)'
+alias vn='v ~/vimwiki/context/$(ls ~/vimwiki/content | fzf)'
 alias vv='v ~/.vimrc'
+alias vw='v -c ":VimwikiIndex"'
 
 alias gita="python3 -m gita"
+alias gap='~/Downloads/gap-4.11.1/bin/gap.sh'
 
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export CDPATH=.:$HOME:$HOME/src
+export PATH=$PATH:$GOPATH/bin:/Applications/Postgres.app/Contents/Versions/13/bin/:$HOME/.local/bin
+#export CDPATH=.:$HOME:$HOME/src
 
 export SCHRODINGER=/opt/schrodinger/suites2021-3
 export SCHRODINGER_SRC=$HOME/src
@@ -90,8 +93,8 @@ fe() {
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
-# fd - cd to selected directory
-fd() {
+# zd - cd to selected directory
+zd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
