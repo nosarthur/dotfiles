@@ -13,6 +13,7 @@ shopt -s autocd
 shopt -s direxpand
 
 alias c='clear'
+alias cm='cat Makefile'
 alias cv="networksetup -connectpppoeservice 'NYC VPN'"
 alias cx='chmod +x'
 alias d='docker'
@@ -22,12 +23,12 @@ alias ll="ls -lhtr"
 alias ls="ls -hG"
 alias pp='pwd | tr -d "\n" | pbcopy'
 alias r='greadlink -f'
-alias rp='_rp(){ greadlink -f "$1"| tr -d "\n" | pbcopy;}; _rp'
+alias rr='_rp(){ greadlink -f "$1"| tr -d "\n" | pbcopy;}; _rp'
 alias s='ssh'
 alias sb='. ~/.bashrc'
 alias t='taskell'
 alias tf='tail -f'
-alias tp='tail -n 1 | grep -o "/[^ ]*" | tr -d "\n" | pbcopy'
+alias tt='tee >(tail -n 1 | grep -o "/[^ ]*" | tr -d "\n" | pbcopy)'
 alias v="vim"
 alias vb='v ~/.bashrc'
 alias vg='v ~/.gitconfig'
