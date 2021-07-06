@@ -17,7 +17,6 @@ alias cm='cat Makefile'
 alias cv="networksetup -connectpppoeservice 'NYC VPN'"
 alias cx='chmod +x'
 alias d='docker'
-alias ff='find . -name'
 alias g='git'
 alias ll="ls -lhtr"
 alias ls="ls -hG"
