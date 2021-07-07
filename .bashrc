@@ -18,6 +18,7 @@ alias cv="networksetup -connectpppoeservice 'NYC VPN'"
 alias cx='chmod +x'
 alias d='docker'
 alias g='git'
+alias gca='git ci -am'
 alias ll="ls -lhtr"
 alias ls="ls -hG"
 alias pp='pwd | tr -d "\n" | pbcopy'

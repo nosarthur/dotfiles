@@ -16,16 +16,12 @@
     file-style = bold yellow ul
     file-decoration-style = none
 
-[diff]
-	tool = vimdiff
-	algorithm = patience
 [difftool]
 	prompt = false
 [merge]
 	tool = vimdiff
 [core]
 	editor = vim
-    #pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
 	co = checkout
 	ci = commit
@@ -34,9 +30,9 @@
     stat = diff --stat
     dt = difftool
 	unstage = reset HEAD --
-	last = log --pretty=oneline -3 HEAD
+	last = show --pretty="" --name-status
     cram = commit -a --amend --no-edit
-    logo = log --pretty=oneline
+    logo = log --pretty=oneline -5 HEAD
 #[url "git@github.com:"]
 #    insteadOf = "https://github.com/"
 [user]
