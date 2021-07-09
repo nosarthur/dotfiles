@@ -12,8 +12,8 @@ export HISTSIZE=10000
 shopt -s autocd
 shopt -s direxpand
 
+alias bm='bat Makefile'
 alias c='clear'
-alias cm='cat Makefile'
 alias cv="networksetup -connectpppoeservice 'NYC VPN'"
 alias cx='chmod +x'
 alias d='docker'
@@ -42,18 +42,20 @@ alias gap='~/Downloads/gap-4.11.1/bin/gap.sh'
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:/Applications/Postgres.app/Contents/Versions/13/bin/:$HOME/.local/bin
 #export CDPATH=.:$HOME:$HOME/src
+export PYFLYBY_PATH=-:$HOME/.pyflyby/
+
 
 export SCHRODINGER=/opt/schrodinger/suites2021-3
 export SCHRODINGER_SRC=$HOME/src
+export SCHRODINGER_LIB=$HOME/lib
 export S=$SCHRODINGER
 export SS=/opt/schrodinger/suites2021-2/
 alias sr=$S/run
 alias sj=$S/jsc
+alias spy='$S/run py'
 alias fuzzy="$S/run python3 -m schrodinger.application.scisol.packages.fep.fuzzy"
 alias fuzzy2="$SS/run python3 -m schrodinger.application.scisol.packages.fep.fuzzy"
-alias sip='$SCHRODINGER/run python3 -m IPython'
 alias bdg=$SCHRODINGER_SRC/mmshare/build_tools/buildinger.sh
-export SCHRODINGER_LIB=$HOME/lib
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 

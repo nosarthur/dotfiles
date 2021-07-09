@@ -26,13 +26,14 @@
 	co = checkout
 	ci = commit
 	br = branch
-	st = status
+	st = status -sb
     stat = diff --stat
     dt = difftool
 	unstage = reset HEAD --
-	last = show --pretty="" --name-status
+	last = show --oneline --name-status
     cram = commit -a --amend --no-edit
-    logo = log --pretty=oneline -5 HEAD
+	logo = log --oneline -5
+	d = diff
 #[url "git@github.com:"]
 #    insteadOf = "https://github.com/"
 [user]
