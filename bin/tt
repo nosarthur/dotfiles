@@ -1,0 +1,9 @@
+
+case $# in
+0) tail `ls -t |head -1`;;
+1) tail `ls -t |head -$1|fzf`;;
+#* 0) tee >(tail -1 | ff NF | tr -d "\n"| pbcopy);; */
+#* 1) tee >(tail -1 | ff $1 | tr -d "\n"| pbcopy);; */
+#* 2) tee >(tail -$2 |head -1 | ff $1 | tr -d "\n"| pbcopy);; */
+esac
+

@@ -1,0 +1,6 @@
+
+case $# in
+0) vim `ls -tp | grep -v / | fzf`;;
+1) vim `ls -tp | grep -v / | head -$1| fzf`;;
+esac
+

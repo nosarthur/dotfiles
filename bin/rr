@@ -1,0 +1,6 @@
+
+case $# in
+0) pwd | tr -d "\n" | pbcopy;;              # copy cwd
+1) greadlink -f $1| tr -d '\n' | pbcopy;;   # copy $1 path
+esac
+

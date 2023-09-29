@@ -1,0 +1,6 @@
+
+case $# in
+0) ls -t |fzf| tr -d '\n'|pbcopy;;
+1) ls -t | head -$1 |fzf |tr -d '\n'|pbcopy;;
+esac
+

@@ -1,0 +1,1 @@
+diff <(command ls  $1 | cut -d_ -f1) <(command ls $2 | cut -d_ -f1)

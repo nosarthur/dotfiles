@@ -1,0 +1,6 @@
+
+case $# in
+0) cat `ls -tp | grep -v / | head -1`;;
+1) cat `ls -tp | grep -v / | head -$1 |fzf`;;
+esac
+

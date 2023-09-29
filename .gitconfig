@@ -1,0 +1,56 @@
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+
+[mergetool]
+	prompt = false
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[core]
+	editor = vim
+[alias]
+	br = branch
+	ci = commit
+	co = checkout
+	d = diff
+	last = show --oneline --name-status
+	lo = log --oneline -7
+	st = status -sb
+	unstage = reset HEAD --
+    cram = commit -a --amend --no-edit
+    dt = difftool
+    mt = mergetool
+    stat = diff --stat
+	wt = worktree
+#[url "git@github.com:"]
+#    insteadOf = "https://github.com/"
+[user]
+	name = Dong Zhou
+    email = dong.zhou@schrodinger.com
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+[branch]
+	autosetupmerge = always
+[push]
+	default = simple
+[advice]
+	detachedHead = false
