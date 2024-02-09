@@ -12,6 +12,8 @@
 	<string></string>
 	<key>Default Bookmark Guid</key>
 	<string>8187F49C-2300-4DB0-B4BF-6A857CDE825F</string>
+	<key>FocusReportingEnabled</key>
+	<false/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>

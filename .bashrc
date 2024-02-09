@@ -31,6 +31,7 @@ alias cx='chmod +x'
 alias d='docker'
 alias du1='du -hd 1 |sort -hr'
 alias dv="networksetup -disconnectpppoeservice 'NYC VPN'"
+alias e=exit
 alias fe1='v `ls -tr |tail -7 |fzf`'
 alias g='git'
 alias gca='git ci -am'
@@ -66,7 +67,7 @@ alias vb='v ~/.bashrc'
 alias vg='v ~/.gitconfig'
 alias vlog='v -p *.log'
 alias vm='v Makefile'
-alias vmsj='vp *msj'
+alias vmsj='vp -p *msj'
 alias vn='n ls |fzf | n o'
 alias vd='v -d'
 alias vo='v -O'
@@ -88,12 +89,13 @@ export CSP2=/Users/dzhou/src/mega-csp/2nd-wtree/bin
 export CSP3=/Users/dzhou/src/mega-csp/3rd-wtree/bin
 export CSP4=/Users/dzhou/src/mega-csp/4th-wt/bin/
 export CSP5=/Users/dzhou/src/mega-csp/5th-wtree/bin
+export CSP6=/Users/dzhou/src/mega-csp/6th-wtree/bin
 
-export SCHRODINGER=/opt/schrodinger/suites2023-3/
+export SCHRODINGER=/opt/schrodinger/suites2024-1/
 export SCHRODINGER_SRC=$HOME/src/sdg/
 export SCHRODINGER_LIB=$HOME/lib
 export S=$SCHRODINGER
-export SS=/opt/schrodinger/23-4/
+export SS=/opt/schrodinger/24-1/
 alias sr=$S/run
 alias sj=$S/jsc
 alias spy='$S/run py'
@@ -178,3 +180,7 @@ complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-
 #   GIT_PROMPT_ONLY_IN_REPO=1
 #   source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 # fi
+#
+take () {
+    mkdir -p "$1" && cd "$1"
+}

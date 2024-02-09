@@ -43,7 +43,8 @@
 #    insteadOf = "https://github.com/"
 [user]
 	name = Dong Zhou
-    email = dong.zhou@schrodinger.com
+    ; email = dong.zhou@schrodinger.com
+    email = zhou.dong@gmail.com
 [pull]
 	rebase = true
 [init]
