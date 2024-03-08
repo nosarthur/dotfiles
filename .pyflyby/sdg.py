@@ -1,4 +1,5 @@
 from schrodinger.structure import Structure, StructureReader, StructureWriter
+from schrodinger import structure
 
 from schrodinger.application.desmond.packages import analysis, topo, traj
 from schrodinger.application.desmond import cms

@@ -439,7 +439,7 @@ nnoremap ,c :write | edit $MYVIFMRC | restart full<cr>
 nnoremap ,C :!mvim --remote-tab-silent $MYVIFMRC &<cr>
 
 nnoremap ,t :tabnew<cr>
-nnoremap x :sync<cr>
+nnoremap x :move<cr>
 
 " Toggle wrap setting on ,w key
 nnoremap ,r :set wrap!<cr>
@@ -456,7 +456,6 @@ nnoremap M :mkdir<space>
 nnoremap <f3> :!less %f<cr>
 nnoremap <f4> :edit<cr>
 nnoremap ; :copy<cr>
-nnoremap ,m :move<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
 

@@ -26,6 +26,7 @@ alias cdt='cd `ll |grep ^d |ff NF |tail -1`'
 alias cdt='cd `ll |grep ^d |ff NF |fzf`'
 alias cdt='cd `command ls -tl |grep ^d |ff NF |fzf`'
 # ct: cat latest
+alias ct='cat `ls -tp | grep -v / | head -15 |fzf`'
 alias cv="networksetup -connectpppoeservice 'NYC VPN'"
 alias cx='chmod +x'
 alias d='docker'
@@ -38,12 +39,14 @@ alias gca='git ci -am'
 alias glo='g lo'
 alias gst='git st'
 alias h='head'
+alias i=vifm
 alias lc='wc -l'
 alias ll="ls -lhtr"
 alias l=lt
 alias ls="ls -G"
 alias lll='ls -1tr'
 alias m=make
+alias mall='make all'
 alias n=notes
 alias nct='zgrep -c f_m_ct'
 alias n2b='mv `find  ~/notes/ -type f -name '*.md' |fzf` `gita ls blog`/_drafts/'
@@ -53,6 +56,7 @@ alias p=pwd
 alias q='jobs'
 alias r='greadlink -f'
 alias rmf="fzf | xargs -I '{}' rm {}"
+alias rrt="ls -t |fzf|xargs greadlink -f | tr -d '\n'|pbcopy"
 # rr: copy path / field
 alias s='ssh'
 # ss: sum field
@@ -95,7 +99,7 @@ export SCHRODINGER=/opt/schrodinger/suites2024-1/
 export SCHRODINGER_SRC=$HOME/src/sdg/
 export SCHRODINGER_LIB=$HOME/lib
 export S=$SCHRODINGER
-export SS=/opt/schrodinger/24-1/
+export SS=/opt/schrodinger/24-2/
 alias sr=$S/run
 alias sj=$S/jsc
 alias spy='$S/run py'
@@ -184,3 +188,6 @@ complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-
 take () {
     mkdir -p "$1" && cd "$1"
 }
+
+source /Users/dzhou/.iterm2_shell_integration.bash
+export BAT_THEME='Solarized (light)'

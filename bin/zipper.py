@@ -1,6 +1,5 @@
 #!/usr/bin/env srun.sh
 
-#!$S/internal/bin/python3
 """
 If one input file, split the input; If many input files, merge them into one.
 
