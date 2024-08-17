@@ -1,10 +1,12 @@
+export PATH=$PATH:$HOME/bin:/opt/homebrew/bin/
+
 fortune
 
 # set -o vi
 stty -ixon
 bind -f ~/.inputrc
 
-export EDITOR=/usr/local/bin/vim
+export EDITOR=/opt/homebrew/bin/vim
 
 export HISTIGNORE='pwd:exit:fg:bg:top:clear:history:ls:ll:uptime:df'
 export HISTCONTROL=ignoredups
@@ -61,12 +63,11 @@ alias rrt="ls -t |fzf|xargs greadlink -f | tr -d '\n'|pbcopy"
 alias s='ssh'
 # ss: sum field
 alias sb='. ~/.bashrc'
-# alias stack=/Users/dzhou/.local/bin/stack
 alias t='touch'
 alias tf='tail -f `ls -1t| fzf`'
 alias touch=gtouch
 # tt: copy field of last row
-alias v="/usr/local/bin/vim"
+alias v=/opt/homebrew/bin/vim
 alias vb='v ~/.bashrc'
 alias vg='v ~/.gitconfig'
 alias vlog='v -p *.log'
@@ -86,14 +87,7 @@ alias gap='~/Downloads/gap-4.11.1/bin/gap.sh'
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin:/Applications/Postgres.app/Contents/Versions/13/bin/:$HOME/.local/bin
-export PATH=$PATH:$HOME/bin
 export PYFLYBY_PATH=-:$HOME/.pyflyby/
-export CSP=/Users/dzhou/src/mega-csp/csp/bin
-export CSP2=/Users/dzhou/src/mega-csp/2nd-wtree/bin
-export CSP3=/Users/dzhou/src/mega-csp/3rd-wtree/bin
-export CSP4=/Users/dzhou/src/mega-csp/4th-wt/bin/
-export CSP5=/Users/dzhou/src/mega-csp/5th-wtree/bin
-export CSP6=/Users/dzhou/src/mega-csp/6th-wtree/bin
 
 export SCHRODINGER=/opt/schrodinger/suites2024-1/
 export SCHRODINGER_SRC=$HOME/src/sdg/
@@ -120,8 +114,6 @@ function dc(){
 # Enable tab completion
 source ~/.git-completion.bash
 source ~/.gita-completion.bash
-source ~/.srun_completion.bash
-source ~/.jsc_completion.bash
 
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
@@ -189,5 +181,5 @@ take () {
     mkdir -p "$1" && cd "$1"
 }
 
-source /Users/dzhou/.iterm2_shell_integration.bash
+source /Users/nos/.iterm2_shell_integration.bash
 export BAT_THEME='Solarized (light)'
