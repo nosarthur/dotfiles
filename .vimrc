@@ -47,7 +47,7 @@ set laststatus=2
 set spell
 set title
 set encoding=utf-8
-set colorcolumn=80
+set colorcolumn=81
 set autoindent
 "set smartindent
 set nostartofline

@@ -6,7 +6,7 @@ fortune
 stty -ixon
 bind -f ~/.inputrc
 
-export EDITOR=/opt/homebrew/bin/vim
+export EDITOR=/opt/homebrew/bin/nvim
 
 export HISTIGNORE='pwd:exit:fg:bg:top:clear:history:ls:ll:uptime:df'
 export HISTCONTROL=ignoredups
@@ -68,6 +68,7 @@ alias tf='tail -f `ls -1t| fzf`'
 alias touch=gtouch
 # tt: copy field of last row
 alias v=/opt/homebrew/bin/vim
+alias v=nv
 alias vb='v ~/.bashrc'
 alias vg='v ~/.gitconfig'
 alias vlog='v -p *.log'
@@ -86,7 +87,7 @@ alias gita="python3 -m gita"
 alias gap='~/Downloads/gap-4.11.1/bin/gap.sh'
 
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin:/Applications/Postgres.app/Contents/Versions/13/bin/:$HOME/.local/bin
+export PATH=$PATH:$GOPATH/bin:/Applications/Postgres.app/Contents/Versions/13/bin/:$HOME/.local/bin:/Users/nos/Library/Python/3.9/bin
 export PYFLYBY_PATH=-:$HOME/.pyflyby/
 
 export SCHRODINGER=/opt/schrodinger/suites2024-1/
@@ -163,8 +164,6 @@ z() {
    [ $# -gt 0 ] && _z "$*" && return
    cd "$(_z -l 2>&1 | fzf --height 40% --nth 2.. --reverse --inline-info +s --tac --query "${*##-* }" | sed 's/^[0-9,.]* *//')"
 }
-
-
 
 # complete make targets
 complete -W "\`grep -oE '^[a-zA-Z0-9_.-]+:([^=]|$)' ?akefile | sed 's/[^a-zA-Z0-9_.-]*$//'\`" make

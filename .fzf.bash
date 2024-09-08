@@ -10,4 +10,4 @@ fi
 
 # Key bindings
 # ------------
-source "/usr/local/opt/fzf/shell/key-bindings.bash"
+source "/opt/homebrew/opt/fzf/shell/key-bindings.bash"
