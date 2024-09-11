@@ -120,15 +120,11 @@ set confirm-=delete,permdelete
 
 " :mark mark /full/directory/path [filename]
 
-mark 2 ~/src/mega-csp/2nd-wtree/
-mark 3 ~/src/mega-csp/3rd-wtree/
-mark 4 ~/src/mega-csp/4th-wt/
 mark 5 ~/src/mega-csp/5th-wtree
 
 mark b ~/bin/
 mark d ~/Downloads/
-mark h ~/
-mark r ~/Documents/readings
+mark a /Users/nos/src/atommap/ama
 
 " ------------------------------------------------------------------------------
 " Commands

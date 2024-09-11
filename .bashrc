@@ -24,7 +24,7 @@ alias bm='bat Makefile'
 # bt: bat latest
 alias c='cat'
 alias cm='cat Makefile'
-alias cdt='cd `ll |grep ^d |ff NF |tail -1`'
+alias ca='conda activate ama-dev'
 alias cdt='cd `ll |grep ^d |ff NF |fzf`'
 alias cdt='cd `command ls -tl |grep ^d |ff NF |fzf`'
 # ct: cat latest
@@ -182,3 +182,6 @@ take () {
 
 source /Users/nos/.iterm2_shell_integration.bash
 export BAT_THEME='Solarized (light)'
+
+# eval "$(register-python-argcomplete conda)"
+

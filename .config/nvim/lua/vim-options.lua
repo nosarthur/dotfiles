@@ -27,6 +27,7 @@ vim.cmd("set nobackup")
 vim.cmd("set nowritebackup")
 vim.cmd("set noswapfile")
 
+-- filetype
 vim.cmd("filetype on")
 vim.cmd("filetype plugin on")
 vim.cmd("filetype indent on")
