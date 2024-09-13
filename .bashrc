@@ -25,6 +25,10 @@ alias bm='bat Makefile'
 alias c='cat'
 alias cm='cat Makefile'
 alias ca='conda activate ama-dev'
+alias caa='conda activate atommap-dev'
+alias cab='conda activate'
+alias cad='conda deactivate'
+alias cs='conda activate siflow-dev'
 alias cdt='cd `ll |grep ^d |ff NF |fzf`'
 alias cdt='cd `command ls -tl |grep ^d |ff NF |fzf`'
 # ct: cat latest
@@ -115,6 +119,7 @@ function dc(){
 # Enable tab completion
 source ~/.git-completion.bash
 source ~/.gita-completion.bash
+source ~/.tmux-completion.bash
 
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

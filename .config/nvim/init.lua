@@ -19,5 +19,9 @@ vim.diagnostic.config({ virtual_text = false })
 
 vim.g.floaterm_keymap_toggle = "<Leader>,"
 
+vim.g.AutoPairsFlyMode = 0
+vim.g.AutoPairsShortcutBackInsert = "<C-q>"
+vim.g.AutoPairsShortcutFastWrap = "<C-s>"
+
 require("vim-options")
 require("lazy").setup("plugins")

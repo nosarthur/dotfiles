@@ -37,8 +37,8 @@ return {
             lspconfig.lua_ls.setup({
                 capabilities = capabilities,
             })
-            local lspconfig = require("lspconfig")
             lspconfig.gopls.setup({
+                capabilities = capabilities,
                 settings = {
                     gopls = {
                         analyses = {

@@ -27,6 +27,9 @@ vim.cmd("set nobackup")
 vim.cmd("set nowritebackup")
 vim.cmd("set noswapfile")
 
+-- vim.cmd("highlight ExtraWhitespace ctermbg=red guibg=red")
+-- vim.cmd("match ExtraWhitespace /s+$/")
+
 -- filetype
 vim.cmd("filetype on")
 vim.cmd("filetype plugin on")
@@ -45,7 +48,7 @@ vim.cmd("vnoremap > >gv")
 
 -- leader key shortcuts
 vim.g.mapleader = ","
-vim.keymap.set("n", "<leader>q", ":q<cr>", {}) -- quit current
+vim.keymap.set("n", "<leader>q", ":q<cr>", {})   -- quit current
 vim.keymap.set("n", "<leader>e", ":qa!<cr>", {}) -- quit all
 vim.keymap.set("n", "<leader>n", ":tabnew<cr>", {})
 vim.keymap.set("i", "<leader>n", "<c-c>:tabnew<cr>", {})
@@ -66,3 +69,4 @@ vim.keymap.set("n", "<leader>4", "4gt", {})
 vim.keymap.set("", "<tab>", "<C-W>W:cd %:p:h<CR>:<CR>", {})
 
 vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
+-- vim.cmd("autocmd BufWritePre * %s/s+$//e")
