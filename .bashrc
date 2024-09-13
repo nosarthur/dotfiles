@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/bin:/opt/homebrew/bin/
+export PATH=/opt/homebrew/bin/:$PATH:$HOME/bin
 
 fortune
 
@@ -7,6 +7,7 @@ stty -ixon
 bind -f ~/.inputrc
 
 export EDITOR=/opt/homebrew/bin/nvim
+export EDITOR=vim
 
 export HISTIGNORE='pwd:exit:fg:bg:top:clear:history:ls:ll:uptime:df'
 export HISTCONTROL=ignoredups
@@ -33,6 +34,7 @@ alias cdt='cd `ll |grep ^d |ff NF |fzf`'
 alias cdt='cd `command ls -tl |grep ^d |ff NF |fzf`'
 # ct: cat latest
 alias ct='cat `ls -tp | grep -v / | head -15 |fzf`'
+alias ctags="`brew --prefix`/bin/ctags"
 alias cv="networksetup -connectpppoeservice 'NYC VPN'"
 alias cx='chmod +x'
 alias d='docker'
@@ -46,6 +48,7 @@ alias glo='g lo'
 alias gst='git st'
 alias h='head'
 alias i=vifm
+alias ic='imgcat -H 50%'
 alias lc='wc -l'
 alias ll="ls -lhtr"
 alias l=lt
@@ -73,6 +76,7 @@ alias touch=gtouch
 # tt: copy field of last row
 alias v=/opt/homebrew/bin/vim
 alias v=nv
+alias v=vim
 alias vb='v ~/.bashrc'
 alias vg='v ~/.gitconfig'
 alias vlog='v -p *.log'

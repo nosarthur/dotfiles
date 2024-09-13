@@ -1,6 +1,4 @@
 {
-  "python.pythonPath": "$SCHRODINGER/internal/bin/python3",
-  "python.analysis.extraPaths": ["$SCHRODINGER_SRC/mmshare/python/modules"],
   "python.linting.flake8Args": ["--ignore=E123,E125,E126,E127,E128,E201,E221,E252,E265,E303,E501,W391"],
   "python.analysis.useLibraryCodeForTypes": false,
   "python.jediEnabled": false,

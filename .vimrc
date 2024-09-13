@@ -21,6 +21,7 @@ Plug 'honza/vim-snippets'
 Plug 'ojroques/vim-oscyank'
 Plug 'psf/black', { 'branch': 'stable' }
 Plug 'voldikss/vim-floaterm'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 let g:seoul256_background = 235
@@ -188,7 +189,7 @@ nnoremap <silent> gl "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\
 
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
@@ -216,7 +217,7 @@ nmap <leader>o :Files!<CR>
 nmap <leader>r :Rg!<CR>
 nmap <leader>t :TagbarToggle<CR>
 nmap <leader>m :FloatermNew
-" nmap <leader>h :vert ter<CR>
+nmap <leader>h :NERDTreeToggle<CR>
 
 tnoremap <silent> <leader>h  <C-\><C-n>:FloatermToggle<CR>
 tnoremap <Esc> <C-\><C-n>
