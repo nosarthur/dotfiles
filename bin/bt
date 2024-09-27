@@ -1,6 +1,6 @@
 
 case $# in
-0) bat `ls -tp | grep -v / | head -1`;;
+0) bat `ls -tp | grep -v / | fzf`;;
 1) bat `ls -tp | grep -v / | head -$1 |fzf`;;
 esac
 

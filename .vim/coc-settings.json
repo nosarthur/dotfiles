@@ -1,8 +1,13 @@
 {
-  "python.linting.flake8Args": ["--ignore=E123,E125,E126,E127,E128,E201,E221,E252,E265,E303,E501,W391"],
+  "python.linting.flake8Args": [
+    "--ignore=E123,E125,E126,E127,E128,E201,E221,E252,E265,E303,E501,W391"
+  ],
+  "python.linting.flake8Enabled": true,
+  "python.linting.pydocstyleEnabled": true,
   "python.analysis.useLibraryCodeForTypes": false,
   "python.jediEnabled": false,
   "suggest.noselect": true,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "json"],
   "languageserver": {
     "golang": {
       "command": "gopls",
@@ -12,21 +17,33 @@
         "usePlaceholders": true
       }
     },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    },
     "haskell": {
       "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
       "rootPatterns": [
-          "*.cabal",
-          "stack.yaml",
-          "cabal.project",
-          "package.yaml",
-          "hie.yaml"
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml",
+        "hie.yaml"
       ],
-      "filetypes": [
-        "hs",
-        "lhs",
-        "haskell"
-      ],
+      "filetypes": ["hs", "lhs", "haskell"],
       "initializationOptions": {
         "languageServerHaskell": {
           "hlintOn": true,

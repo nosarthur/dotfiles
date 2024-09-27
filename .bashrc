@@ -71,6 +71,7 @@ alias s='ssh'
 # ss: sum field
 alias sb='. ~/.bashrc'
 alias t='touch'
+alias t=tmux
 alias tf='tail -f `ls -1t| fzf`'
 alias touch=gtouch
 # tt: copy field of last row

@@ -2,6 +2,9 @@
   "dependencies": {
     "coc-pyright": ">=1.1.380",
     "coc-json": ">=1.9.2",
-    "coc-word": ">=1.2.2"
-  }
+    "coc-word": ">=1.2.2",
+    "coc-prettier": ">=9.3.2",
+    "coc-ccls": ">=0.0.5"
+  },
+  "lastUpdate": 1727106781195
 }

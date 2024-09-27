@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'honza/vim-snippets'
 Plug 'ojroques/vim-oscyank'
 Plug 'psf/black', { 'branch': 'stable' }
+Plug 'brentyi/isort.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdtree'
 call plug#end()
@@ -204,8 +205,17 @@ highlight Pmenu ctermbg=black ctermfg=yellow
 
 autocmd FileType haskell autocmd BufWritePre <buffer> call CocAction('format')
 let g:haskell_indent_disable=1
-autocmd BufWritePre *.py Black
 
+
+augroup black_on_save
+  autocmd!
+  autocmd BufWritePre *.py Black
+augroup end
+
+augroup isort_on_save
+  autocmd!
+  autocmd BufWritePre *.py call isort#Isort(0, line('$'), v:null, v:false)
+augroup end
 
 nmap <leader>a :CtrlSF -R ""<Left>
 " nmap <leader>b :BLines<CR>
@@ -216,10 +226,10 @@ nmap <leader>f :GFiles!<CR>
 nmap <leader>o :Files!<CR>
 nmap <leader>r :Rg!<CR>
 nmap <leader>t :TagbarToggle<CR>
-nmap <leader>m :FloatermNew
+nmap <leader>m :History<cr>
 nmap <leader>h :NERDTreeToggle<CR>
 
-tnoremap <silent> <leader>h  <C-\><C-n>:FloatermToggle<CR>
+" tnoremap <silent> <leader>h  <C-\><C-n>:FloatermToggle<CR>
 tnoremap <Esc> <C-\><C-n>
 
 
@@ -298,30 +308,30 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-augroup maegz
-  " Remove all gzip autocommands
-  au!
+" augroup maegz
+"   " Remove all gzip autocommands
+"   au!
 
-  " Enable editing of gzipped files
-  "       read: set binary mode before reading the file
-  "             uncompress text in buffer after reading
-  "      write: compress file after writing
-  "     append: uncompress file, append, compress file
-  autocmd BufReadPre,FileReadPre        *.maegz,*.phypo set bin
-  autocmd BufReadPost,FileReadPost      *.maegz,*.phypo let ch_save = &ch|set ch=2
-  autocmd BufReadPost,FileReadPost      *.maegz,*.phypo '[,']!gunzip
-  autocmd BufReadPost,FileReadPost      *.maegz,*.phypo set nobin
-  autocmd BufReadPost,FileReadPost      *.maegz,*.phypo let &ch = ch_save|unlet ch_save
-  autocmd BufReadPost,FileReadPost      *.maegz,*.phypo execute ":doautocmd BufReadPost " . expand("%:r")
+"   " Enable editing of gzipped files
+"   "       read: set binary mode before reading the file
+"   "             uncompress text in buffer after reading
+"   "      write: compress file after writing
+"   "     append: uncompress file, append, compress file
+"   autocmd BufReadPre,FileReadPre        *.maegz,*.phypo set bin
+"   autocmd BufReadPost,FileReadPost      *.maegz,*.phypo let ch_save = &ch|set ch=2
+"   autocmd BufReadPost,FileReadPost      *.maegz,*.phypo '[,']!gunzip
+"   autocmd BufReadPost,FileReadPost      *.maegz,*.phypo set nobin
+"   autocmd BufReadPost,FileReadPost      *.maegz,*.phypo let &ch = ch_save|unlet ch_save
+"   autocmd BufReadPost,FileReadPost      *.maegz,*.phypo execute ":doautocmd BufReadPost " . expand("%:r")
 
-  autocmd BufWritePost,FileWritePost    *.maegz,*.phypo !mv <afile> <afile>:r
-  autocmd BufWritePost,FileWritePost    *.maegz,*.phypo !gzip <afile>:r
-  autocmd BufWritePost,FileWritePost    *.maegz,*.phypo !mv <afile>:r.gz <afile>:r.maegz
+"   autocmd BufWritePost,FileWritePost    *.maegz,*.phypo !mv <afile> <afile>:r
+"   autocmd BufWritePost,FileWritePost    *.maegz,*.phypo !gzip <afile>:r
+"   autocmd BufWritePost,FileWritePost    *.maegz,*.phypo !mv <afile>:r.gz <afile>:r.maegz
 
-  autocmd FileAppendPre                 *.maegz,*.phypo !gunzip <afile>
-  autocmd FileAppendPre                 *.maegz,*.phypo !mv <afile>:r <afile>
-  autocmd FileAppendPost                *.maegz,*.phypo !mv <afile> <afile>:r
-  autocmd FileAppendPost                *.maegz,*.phypo !gzip <afile>:r
-  autocmd FileAppendPost                *.maegz,*.phypo !mv <afile>:r.gz <afile>:r.maegz
- augroup END
+"   autocmd FileAppendPre                 *.maegz,*.phypo !gunzip <afile>
+"   autocmd FileAppendPre                 *.maegz,*.phypo !mv <afile>:r <afile>
+"   autocmd FileAppendPost                *.maegz,*.phypo !mv <afile> <afile>:r
+"   autocmd FileAppendPost                *.maegz,*.phypo !gzip <afile>:r
+"   autocmd FileAppendPost                *.maegz,*.phypo !mv <afile>:r.gz <afile>:r.maegz
+"  augroup END
 
