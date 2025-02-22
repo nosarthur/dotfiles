@@ -23,6 +23,8 @@ Plug 'psf/black', { 'branch': 'stable' }
 Plug 'brentyi/isort.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdtree'
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+
 call plug#end()
 
 let g:seoul256_background = 235
@@ -32,6 +34,11 @@ let g:lightline = { 'colorscheme': 'seoul256', }
 let g:markdown_folding=1
 let g:markdown_enable_folding = 1
 
+let g:doge_doc_standard_python='google'
+
+let g:black_quiet=1
+let g:black_use_virtualenv = 1
+
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 cmap w!! w !sudo tee > /dev/null %
 
@@ -39,6 +46,7 @@ cmap w!! w !sudo tee > /dev/null %
 autocmd! bufwritepost .vimrc source %
 
 set clipboard=unnamed
+set shortmess-=S
 
 set number
 "set relativenumber
@@ -209,7 +217,7 @@ let g:haskell_indent_disable=1
 
 augroup black_on_save
   autocmd!
-  autocmd BufWritePre *.py Black
+  autocmd BufWritePre *.py silent! Black
 augroup end
 
 augroup isort_on_save

@@ -29,7 +29,9 @@
 	br = branch
 	ci = commit
 	co = checkout
+	cob = checkout -b
 	d = diff
+    dog = log --all --decorate --oneline --graph
 	last = show --oneline --name-status
 	lo = log --oneline -7
 	st = status -sb
@@ -52,7 +54,8 @@
 [branch]
 	autosetupmerge = always
 [push]
-	default = simple
+	default = current
+    autoSetupRemote = true
 [advice]
 	detachedHead = false
 [http]

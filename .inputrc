@@ -2,6 +2,13 @@ set show-all-if-ambiguous on
 set completion-ignore-case on
 set menu-complete-display-prefix on
 
+"\C-o": ">output.txt"
+
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
 TAB: menu-complete
 "\e[Z": menu-complete-backward
 
